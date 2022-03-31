@@ -2,16 +2,17 @@
 # from gensim.summarization import keywords
 import wikipedia
 import en_core_web_sm
-
+import sys
 # Get wiki content.
-wikisearch = wikipedia.page("New Delhi")
+wikisearch = wikipedia.page(sys.argv[1])
 wikicontent = wikisearch.content
 nlp = en_core_web_sm.load()
 doc = nlp(wikicontent)
 
 # Save the wiki content to a file
 # (for reference).
-f = open("NewDelhi.txt", "w",encoding="utf-8")
+loc=(sys.argv[1])+".txt"
+f = open(loc, "w",encoding="utf-8")
 f.write(wikicontent)
 f.close()
 

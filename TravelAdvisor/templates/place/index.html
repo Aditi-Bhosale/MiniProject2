@@ -1,7 +1,7 @@
 {% extends "place/base.html" %}
-
+{% load static %}
 {% block content %}
-    {% for place in places %}
+    <!--{% for place in places %}
         <article class="media content-section ">
           {% comment %} <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }} " height="30px" width="30px"> {% endcomment %}
           <div class="media-body">
@@ -17,7 +17,17 @@
           
         </article>
         
-    {% endfor %}
+    {% endfor %}-->
+
+    <form action="/location/" method="post">
+      {% csrf_token %}
+      Text:
+      <br><br><br><br>
+      <input type="text" name="param" placeholder="Enter the location" required><br><br>
+      
+      <input type="submit" value="Enter Location"><br><br>
+      {{summ}}
+    </form>
     {% if is_paginated %}
 
       {% if page_obj.has_previous %}
