@@ -124,6 +124,12 @@
 				
 				<input type="submit" value="Enter Location"><br><br>
 				{{summ}}
+				{{hotels}}
+	      		{%for key,value in hotels.items %}
+	          		<h2>{{key}}</h2>
+	          		<h2>POS {{value.0}}</h2>
+	          		<h2>NEG {{value.1}}
+	      		{% endfor %}
 			  </form>
 		</div>
 

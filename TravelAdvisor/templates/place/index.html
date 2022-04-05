@@ -21,13 +21,22 @@
 
     <form action="/location/" method="post">
       {% csrf_token %}
+      <p>hello</p>
       Text:
+      <p>hello</p>
       <br><br><br><br>
       <input type="text" name="param" placeholder="Enter the location" required><br><br>
       
       <input type="submit" value="Enter Location"><br><br>
       {{summ}}
+      {{hotels}}
+      {{test}}
+      {%for i in hotels%}
+          <h6>{{i}}</h6>
+          <h6>{{hotels.i}}</h6>
+      {% endfor %}
     </form>
+    <h1>Test</h1>
     {% if is_paginated %}
 
       {% if page_obj.has_previous %}
